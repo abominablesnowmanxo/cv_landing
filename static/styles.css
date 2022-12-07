@@ -1,91 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Titillium web", sans-serif;
+a {
+    text-decoration: none;
+    color: rgb(194, 202, 202);
+}
+
+a:hover {
+    color: black;
 }
 
 body {
+    background-color: black;
+    color: rgb(194, 202, 202);
+}
+
+.bio {
     display: flex;
-    min-height: 100vh;
-    justify-content: center;
     align-items: center;
-    background:linear-gradient(45deg, #5db9bc, #1c0616);
 }
 
-.card {
-    position: absolute;
-    width: 370px;
-    height: 350px;
-    background: rgb(213, 197, 197);
-    border: 2px solid black;
-    border-radius: 20px;
-    transition: 0.2s;
-    z-index: 1;
+.btn-light {
+    border-radius: 20%;
+    background-color: rgb(150, 155, 155);
+    border: none;
 }
 
-.image {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: #000;
-    border: 2px solid #4b4747e6;
-    left: 50%;
-    top: -50px;
-    transform: translateX(-50%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+
+.btn-primary {
+    color: white;
+    background-color: rgb(16, 30, 23);
+    border: none;
+}
+
+.btn-success {
+    color: white;
+    background-color: rgb(150, 155, 155);
+    border: none;
+
+}
+
+.card-body {
+    background-color: rgb(150, 155, 155);
+}
+
+
+.container {
+    scroll-margin-top: 4rem;
+}
+
+#cv {
+    background-color: rgb(150, 155, 155);
+}
+
+hr {
+    color: white;
+}
+
+#myphoto {
     border-radius: 50%;
-    overflow: hidden;
-    filter: grayscale(0.1);
+    max-width: 50%;
+    border: 1px solid black;
 }
 
-.image img {
-    width: 130%;
-    height: 100%;
-    object-fit: cover;
-    transform: translateX(-33px);
+.navbar-toggler, .navbar-toggler-icon {
+    background-color: rgb(150, 155, 155);
 }
 
-.card .content {
-    position: absolute;
+.nav-link {
+    color: rgb(194, 202, 202);
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.navbar {
+    background-color: black;
+}
+
+.response {
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 35%;
-    /* align-items: flex-end; */
-}
-
-.card .content .details {
-    padding: 50px;
-    text-align: center;
-    width: 100%;
-}
-
-.card .content .details h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #000;
-    line-height: 1.8rem;
-}
-
-.card .content .details h2 span {
-    font-size: 1.15rem;
-    font-weight: 400;
-    opacity: 0.7;
-}
-
-.card .links {
-    position: absolute;
-    width: 100%;
-    /* height: 100%; */
-    display: flex;
-    justify-content: center;
-    padding-top: 72%;
-    /* align-items: flex-end; */
-}
-
-.card .links a {
-    padding: 0 3px 0 3px;
-}
+    height: auto;
+  }
