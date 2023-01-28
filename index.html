@@ -22,8 +22,8 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- <a class="nav-link me-3" href="#home">Home</a> -->
-          <a class="nav-link me-3" href="#checklist">Checklists</a>
           <a class="nav-link me-3" href="#bugs">Bug Reports</a>
+          <a class="nav-link me-3" href="#checklist">Checklists</a>
           <!-- <a class="nav-link me-3" href="#postman">Postman</a> -->
           <a class="nav-link me-3" href="#python">Python</a>
           <a class="nav-link me-3" href="#selenium">Selenium</a>
@@ -68,23 +68,6 @@
     </div>
   </div>
   <hr>
-  <div class="container pb-4" id="checklist">
-    <h2 class="text-center m-4"><span class="me-2"><img src="static/images/checklist_icon.png" width="42px" alt=""></span> Checklists
-    </h2>
-    <div class="card  text-center mb-3 text-bg-light">
-      <img src="static/images/checklistyandex.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Yandex Practicum</h5>
-        <p class="card-text">Checklist for educational project 'Yandex.Market'. Several endpoint of the API
-          was tested based on the requirements and API documentation (Apidoc). Bug reports were documented using
-          JetBrain Youtrack.
-        </p>
-        <a href="https://docs.google.com/spreadsheets/d/1o66kw6vH8wmCNxyBh1YknXU4L7ir6N5fppnW4QPQRLk/edit?usp=sharing"
-          class="btn btn-primary" target="_blank">Excel</a>
-      </div>
-    </div>
-  </div>
-  <hr>
   <div class="container pb-4" id="bugs">
     <h2 class="text-center m-4"><span class="me-2"><img src="static/images/bugs4.png" width="42px" alt=""></span> Bug
       Reports</h2>
@@ -107,10 +90,38 @@
     </div>
   </div>
   <hr>
+  <div class="container pb-4" id="checklist">
+    <h2 class="text-center m-4"><span class="me-2"><img src="static/images/checklist_icon.png" width="42px" alt=""></span> Checklists
+    </h2>
+    <div class="card  text-center mb-3 text-bg-light">
+      <img src="static/images/checklistyandex.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Yandex Practicum</h5>
+        <p class="card-text">Checklist for educational project "Yandex.Market". Several endpoint of the API
+          was tested based on the requirements and API documentation (Apidoc). Bug reports were documented using
+          JetBrain Youtrack.
+        </p>
+        <a href="https://docs.google.com/spreadsheets/d/1o66kw6vH8wmCNxyBh1YknXU4L7ir6N5fppnW4QPQRLk/edit?usp=sharing"
+          class="btn btn-primary" target="_blank">Google Sheets</a>
+      </div>
+    </div>
+    <br>
+    <div class="card  text-center mb-3 text-bg-light">
+      <img src="static/images/randompersonapichecklist.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Random Person API</h5>
+        <p class="card-text">Checklist for self-made project <a href="#rpapi" style="color: white">"Random Person API"</a>. All available endpoint of the API
+          was tested based on the requirements and API documentation (Swagger).
+        </p>
+        <a href="https://docs.google.com/spreadsheets/d/12_4DTeGgMcJrYgV4eVX6tmN0sZ2ggmXOuqtkM1EvK9g/edit?usp=sharing"
+          class="btn btn-primary" target="_blank">Google Sheets</a>
+      </div>
+    </div>
+  </div>
   <div class="container pb-4" id="python">
     <h2 class="text-center m-4"><span class="me-2"><img src="static/images/python.png" width="42px" alt=""></span>
       Python</h2>
-    <div class="card text-center mb-3 text-bg-light">
+    <div class="card text-center mb-3 text-bg-light" id="rpapi">
       <img src="static/images/person_api.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Random Person API</h5>
