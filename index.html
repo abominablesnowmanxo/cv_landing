@@ -32,7 +32,6 @@
         <p class="speciality">QA Automation Engineer · Software Testing Engineer</p>
 
         <div class="cv-links" aria-label="CV links">
-          <a href="assets/andrey-kuznetsov-cv-2026.pdf" target="_blank" rel="noreferrer">View CV</a>
           <a href="assets/andrey-kuznetsov-cv-2026.pdf" download>Download CV</a>
         </div>
 
@@ -167,12 +166,44 @@
           </div>
         </div>
       </section>
+
+      <div class="panel-nav" aria-hidden="true">
+        <button type="button" class="panel-arrow panel-arrow-prev" data-panel-step="-1" aria-label="Previous section">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m15 6-6 6 6 6"></path>
+          </svg>
+        </button>
+        <button type="button" class="panel-arrow panel-arrow-next" data-panel-step="1" aria-label="Next section">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 6 6 6-6 6"></path>
+          </svg>
+        </button>
+      </div>
     </main>
 
     <script>
       const toggles = document.querySelectorAll("[data-panel-toggle]");
       const panels = document.querySelectorAll(".info-panel");
+      const panelNav = document.querySelector(".panel-nav");
+      const panelSteps = document.querySelectorAll("[data-panel-step]");
+      const panelOrder = Array.from(toggles).map((toggle) => toggle.dataset.panelToggle);
       let activePanel = null;
+
+      function openPanel(panelName) {
+        const panel = document.getElementById(`panel-${panelName}`);
+
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+
+        closePanels();
+        panel.classList.add("is-active");
+        panel.setAttribute("aria-hidden", "false");
+        document.querySelector(`[data-panel-toggle="${panelName}"]`).classList.add("is-active");
+        panelNav.classList.add("is-active");
+        panelNav.setAttribute("aria-hidden", "false");
+        activePanel = panelName;
+      }
 
       function closePanels() {
         panels.forEach((panel) => {
@@ -180,30 +211,51 @@
           panel.setAttribute("aria-hidden", "true");
         });
         toggles.forEach((toggle) => toggle.classList.remove("is-active"));
+        panelNav.classList.remove("is-active");
+        panelNav.setAttribute("aria-hidden", "true");
         activePanel = null;
+      }
+
+      function stepPanel(direction) {
+        if (!activePanel) {
+          return;
+        }
+
+        const currentIndex = panelOrder.indexOf(activePanel);
+        const nextIndex = (currentIndex + direction + panelOrder.length) % panelOrder.length;
+        openPanel(panelOrder[nextIndex]);
       }
 
       toggles.forEach((toggle) => {
         toggle.addEventListener("click", () => {
           const panelName = toggle.dataset.panelToggle;
-          const panel = document.getElementById(`panel-${panelName}`);
 
           if (activePanel === panelName) {
             closePanels();
             return;
           }
 
-          closePanels();
-          panel.classList.add("is-active");
-          panel.setAttribute("aria-hidden", "false");
-          toggle.classList.add("is-active");
-          activePanel = panelName;
+          openPanel(panelName);
+        });
+      });
+
+      panelSteps.forEach((button) => {
+        button.addEventListener("click", () => {
+          stepPanel(Number(button.dataset.panelStep));
         });
       });
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
           closePanels();
+        }
+
+        if (event.key === "ArrowLeft") {
+          stepPanel(-1);
+        }
+
+        if (event.key === "ArrowRight") {
+          stepPanel(1);
         }
       });
     </script>
