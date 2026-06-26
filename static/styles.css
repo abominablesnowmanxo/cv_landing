@@ -70,13 +70,18 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid rgba(197, 168, 200, 0.58);
+  border-radius: 999px;
+  background: rgba(255, 247, 251, 0.56);
 }
 
 .site-nav button {
   min-height: 30px;
-  padding: 4px 9px;
+  padding: 4px 10px;
   border: 1px solid transparent;
+  border-radius: 999px;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
@@ -87,7 +92,8 @@ svg {
 .site-nav button:hover,
 .site-nav button:focus-visible,
 .site-nav button.is-active {
-  border-color: var(--line-strong);
+  border-color: rgba(197, 168, 200, 0.72);
+  background: rgba(255, 247, 251, 0.84);
   color: var(--accent);
   outline: none;
 }
