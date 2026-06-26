@@ -266,8 +266,8 @@ h1 {
   opacity: 0;
   pointer-events: none;
   transition:
-    opacity 180ms ease,
-    visibility 180ms ease;
+    opacity 80ms ease,
+    visibility 80ms ease;
 }
 
 .panel-nav.is-active {
@@ -335,7 +335,7 @@ h1 {
 }
 
 .panel-card.compact {
-  width: min(720px, calc(100% - 28px));
+  width: min(820px, calc(100% - 28px));
 }
 
 .panel-card p,
@@ -366,7 +366,7 @@ h1 {
 }
 
 .data-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .data-grid p,
@@ -378,6 +378,10 @@ h1 {
   min-width: 0;
   padding: clamp(10px, 1.8vmin, 14px);
   background: var(--surface-solid);
+}
+
+.data-grid p {
+  grid-column: span 2;
 }
 
 .data-grid strong,
@@ -469,6 +473,10 @@ h1 {
   .role-grid,
   .work-grid {
     grid-template-columns: 1fr;
+  }
+
+  .data-grid p {
+    grid-column: auto;
   }
 
   .panel-card {
