@@ -237,9 +237,9 @@ h1 {
   pointer-events: none;
   transform: translateY(10px) scale(0.99);
   transition:
-    opacity 280ms ease,
-    transform 280ms ease,
-    visibility 280ms ease;
+    opacity 50ms ease,
+    transform 50ms ease,
+    visibility 50ms ease;
 }
 
 .info-panel::before {
