@@ -47,8 +47,7 @@ button {
 }
 
 p,
-h1,
-h3 {
+h1 {
   margin: 0;
 }
 
@@ -135,7 +134,7 @@ svg {
 
 h1 {
   color: var(--ink);
-  font-size: clamp(2rem, 6vmin, 4rem);
+  font-size: clamp(1.65rem, 4.8vmin, 3.1rem);
   font-weight: 740;
   letter-spacing: 0;
   line-height: 0.98;
@@ -161,8 +160,9 @@ h1 {
 
 .cv-links a {
   min-width: 106px;
-  padding: 7px 11px;
+  padding: 8px 14px;
   border: 1px solid var(--line-strong);
+  border-radius: 999px;
   background: rgba(255, 247, 251, 0.62);
   color: var(--ink);
   font-size: 0.82rem;
@@ -183,10 +183,11 @@ h1 {
 
 .social-links a {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   place-items: center;
   border: 1px solid var(--line);
+  border-radius: 50%;
   background: rgba(255, 247, 251, 0.54);
   color: var(--muted);
 }
@@ -257,12 +258,6 @@ h1 {
 
 .panel-card.compact {
   width: min(720px, calc(100% - 28px));
-}
-
-.panel-card h3 {
-  color: var(--ink);
-  font-size: clamp(1.05rem, 2.2vmin, 1.35rem);
-  line-height: 1.2;
 }
 
 .panel-card p,
@@ -386,7 +381,7 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(1.8rem, 7vmin, 3rem);
+    font-size: clamp(1.55rem, 5.8vmin, 2.45rem);
   }
 
   .panel-card {
