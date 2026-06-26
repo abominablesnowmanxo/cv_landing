@@ -5,254 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Andrey Kuznetsov - QA Automation Engineer focused on Python, Playwright, Pytest, REST API testing, PostgreSQL validation, and end-to-end workflow quality."
+      content="Andrey Kuznetsov - QA Automation Engineer focused on Python, Playwright, REST API testing, PostgreSQL validation, and product quality."
     >
     <title>Andrey Kuznetsov | QA Automation Engineer</title>
     <link rel="stylesheet" href="static/styles.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Andrey Kuznetsov home">
-        <span class="brand-mark">AK</span>
-        <span>Andrey Kuznetsov</span>
+      <a class="brand" href="#" aria-label="Andrey Kuznetsov home" data-home>
+        <span>AK</span>
+        <strong>Andrey Kuznetsov</strong>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Work</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#contact">Contact</a>
+      <nav class="site-nav" aria-label="Profile sections">
+        <button type="button" data-panel-toggle="about">About</button>
+        <button type="button" data-panel-toggle="skills">Skills</button>
+        <button type="button" data-panel-toggle="experience">Experience</button>
+        <button type="button" data-panel-toggle="work">Work</button>
+        <button type="button" data-panel-toggle="certificates">Certificates</button>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <p class="eyebrow">Belgrade, Serbia · Remote</p>
-          <h1 id="hero-title">QA Automation Engineer building reliable test coverage for real product workflows.</h1>
-          <p class="hero-copy">
-            I combine full-cycle manual testing with Python-based automation, REST API validation, and
-            PostgreSQL checks to help teams ship complex web platforms with confidence.
+    <main class="screen" aria-label="Profile landing screen">
+      <section class="identity" aria-labelledby="profile-name">
+        <img src="static/images/photo.JPG" alt="Portrait of Andrey Kuznetsov" class="portrait">
+        <p class="location">Belgrade, Serbia · Remote</p>
+        <h1 id="profile-name">Andrey Kuznetsov</h1>
+        <p class="speciality">QA Automation Engineer · Software Testing Engineer</p>
+
+        <div class="cv-links" aria-label="CV links">
+          <a href="assets/andrey-kuznetsov-cv-2026.pdf" target="_blank" rel="noreferrer">View CV</a>
+          <a href="assets/andrey-kuznetsov-cv-2026.pdf" download>Download CV</a>
+        </div>
+
+        <div class="social-links" aria-label="Social media and contact links">
+          <a href="mailto:kuznetsov.andrey.qa@gmail.com" aria-label="Email Andrey">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6.5h16v11H4v-11Z"></path>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/andrey-kuznetsov-94998324b/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.8 9.6v8.1"></path>
+              <path d="M6.8 6.8h.01"></path>
+              <path d="M11 17.7V9.6"></path>
+              <path d="M11 13.1c0-2.2 1.3-3.6 3.2-3.6 1.8 0 3 1.2 3 3.5v4.7"></path>
+              <path d="M4.2 3.8h15.6v16.4H4.2V3.8Z"></path>
+            </svg>
+          </a>
+          <a href="https://github.com/abominablesnowmanxo" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 19.5c-4 1.2-4-2-5.5-2.5"></path>
+              <path d="M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.8-1.4 5.8-6.2 0-1.4-.5-2.5-1.3-3.4.1-.3.6-1.7-.1-3.4 0 0-1.1-.3-3.5 1.3a12 12 0 0 0-6.4 0C6.6 2.2 5.5 2.5 5.5 2.5c-.7 1.7-.2 3.1-.1 3.4a4.8 4.8 0 0 0-1.3 3.4c0 4.8 3 5.9 5.8 6.2-.4.4-.7 1-.7 2V21"></path>
+            </svg>
+          </a>
+          <a href="https://t.me/Lester_Young" target="_blank" rel="noreferrer" aria-label="Telegram profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 4.5 3.8 11.1c-.8.3-.8 1.4.1 1.6l4.3 1.3 1.6 5c.2.8 1.2 1 1.7.3l2.3-3 4.5 3.3c.7.5 1.6.1 1.7-.8L22 5.5c.1-.7-.4-1.2-1-1Z"></path>
+              <path d="m8.4 13.9 9.7-6.2-7.7 8.5"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="info-panel" id="panel-about" aria-hidden="true" aria-labelledby="panel-about-title">
+        <div class="panel-card">
+          <p class="panel-label">About</p>
+          <h3 id="panel-about-title">Testing close to product, code, and data.</h3>
+          <p>
+            QA Automation Engineer with experience in manual and automated testing of web applications,
+            focused on Python-based automation, exploratory testing, REST API validation, backend logic,
+            and PostgreSQL data checks.
           </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="assets/andrey-kuznetsov-cv-2026.pdf" download>
-              Download CV
+        </div>
+      </section>
+
+      <section class="info-panel" id="panel-skills" aria-hidden="true" aria-labelledby="panel-skills-title">
+        <div class="panel-card compact">
+          <p class="panel-label">Skills</p>
+          <h3 id="panel-skills-title">Core testing stack.</h3>
+          <div class="data-grid">
+            <p><strong>Testing</strong><span>Functional, exploratory, web, mobile, test design, SDLC/STLC.</span></p>
+            <p><strong>Automation</strong><span>Python, Playwright, Pytest, Selenium, Page Object Model.</span></p>
+            <p><strong>API</strong><span>REST, Postman, Newman, JSON, XML, backend validation.</span></p>
+            <p><strong>Data</strong><span>PostgreSQL, Django ORM checks, Chrome DevTools, Charles Proxy.</span></p>
+            <p><strong>Tools</strong><span>Git, Docker, CircleCI, Jira, YouTrack, VS Code.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-panel" id="panel-experience" aria-hidden="true" aria-labelledby="panel-experience-title">
+        <div class="panel-card wide">
+          <p class="panel-label">Experience</p>
+          <h3 id="panel-experience-title">Recent roles.</h3>
+          <div class="role-grid">
+            <article>
+              <p class="role-meta">Oct 2023 - Present · Remote</p>
+              <strong>Floship · Software Testing Engineer</strong>
+              <span>Manual and automated testing for logistics workflows, shipment processing, warehouse operations, integrations, REST APIs, PostgreSQL/Django ORM verification, and CircleCI test execution.</span>
+            </article>
+            <article>
+              <p class="role-meta">Jan 2023 - Jul 2023 · Remote</p>
+              <strong>Scandiweb · Software Testing Engineer</strong>
+              <span>Functional and exploratory testing for Magento e-commerce projects across checkout, payments, accounts, releases, regression cycles, and test documentation.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-panel" id="panel-work" aria-hidden="true" aria-labelledby="panel-work-title">
+        <div class="panel-card wide">
+          <p class="panel-label">Selected Work</p>
+          <h3 id="panel-work-title">Public proof points.</h3>
+          <div class="work-grid">
+            <a href="https://abominablesnowman.pythonanywhere.com" target="_blank" rel="noreferrer">
+              <strong>Random Person API</strong>
+              <span>Python API with Swagger and CRUD methods.</span>
             </a>
-            <a class="button" href="mailto:kuznetsov.andrey.qa@gmail.com">
-              Email
+            <a href="https://github.com/abominablesnowmanxo/nopcommerce_autotest" target="_blank" rel="noreferrer">
+              <strong>nopCommerce Automation</strong>
+              <span>Python, Selenium, Pytest, Page Object Model.</span>
             </a>
-            <a class="button" href="https://www.linkedin.com/in/andrey-kuznetsov-94998324b/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a class="button" href="https://github.com/abominablesnowmanxo" target="_blank" rel="noreferrer">
-              GitHub
+            <a href="https://andreykuznetsovyandex.youtrack.cloud/dashboard?id=2f143011-3168-4ff5-8f74-d03af91706e1" target="_blank" rel="noreferrer">
+              <strong>QA Artifacts</strong>
+              <span>Bug reports and checklist-based testing work.</span>
             </a>
           </div>
         </div>
-        <aside class="profile-panel" aria-label="Profile summary">
-          <img src="static/images/photo.JPG" alt="Portrait of Andrey Kuznetsov" class="profile-photo">
-          <div class="profile-card">
-            <p class="profile-name">Andrey Kuznetsov</p>
-            <p class="profile-role">Software Testing Engineer</p>
-            <dl class="quick-facts">
-              <div>
-                <dt>Focus</dt>
-                <dd>Python · Playwright · Pytest</dd>
-              </div>
-              <div>
-                <dt>Validation</dt>
-                <dd>REST API · PostgreSQL · Django ORM</dd>
-              </div>
-              <div>
-                <dt>Domains</dt>
-                <dd>Logistics platforms · E-commerce</dd>
-              </div>
-            </dl>
+      </section>
+
+      <section class="info-panel" id="panel-certificates" aria-hidden="true" aria-labelledby="panel-certificates-title">
+        <div class="panel-card">
+          <p class="panel-label">Certificates</p>
+          <h3 id="panel-certificates-title">Training.</h3>
+          <div class="certificate-links">
+            <a href="https://stepik.org/cert/1892421" target="_blank" rel="noreferrer">Test Automation with Selenium and Python</a>
+            <a href="https://stepik.org/cert/1920183" target="_blank" rel="noreferrer">Interactive SQL Training</a>
+            <a href="https://drive.google.com/file/d/1XgNiLPuNRFxynrHuLRapg4X7kk7wznR7/view?usp=sharing" target="_blank" rel="noreferrer">Software Testing Engineer</a>
           </div>
-        </aside>
-      </section>
-
-      <section class="section-shell intro-grid" id="about" aria-labelledby="about-title">
-        <div>
-          <p class="section-kicker" id="about-title">About</p>
-        </div>
-        <div class="content-stack">
-          <p>
-            I am a QA Automation Engineer with solid experience in manual and automated testing of
-            web applications. My current direction is Python-based automation while staying deeply
-            involved in exploratory and functional testing.
-          </p>
-          <p>
-            I work across frontend flows, backend business logic, REST APIs, and database integrity
-            checks. I am comfortable reading implementation details, collaborating with developers,
-            and turning repeatable product risks into maintainable automated coverage.
-          </p>
-        </div>
-      </section>
-
-      <section class="section-shell" id="skills" aria-labelledby="skills-title">
-        <div class="section-heading">
-          <p class="section-kicker" id="skills-title">Core Skills</p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-group">
-            <h3>Testing</h3>
-            <p>Functional testing, exploratory testing, web and mobile testing, test design techniques, SDLC and STLC.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Automation</h3>
-            <p>Python, Playwright, Pytest, Selenium basics, Page Object Model, smoke and regression coverage.</p>
-          </article>
-          <article class="skill-group">
-            <h3>API & Backend</h3>
-            <p>REST API testing, Postman, Newman, JSON, XML, backend business logic validation.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Data & Debugging</h3>
-            <p>PostgreSQL, Django ORM verification, Chrome DevTools, Charles Proxy, Android Studio.</p>
-          </article>
-          <article class="skill-group">
-            <h3>Delivery Tools</h3>
-            <p>Git, Docker, CircleCI, Jira, YouTrack, Visual Studio Code, test cases, checklists, bug reports.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading">
-          <p class="section-kicker" id="experience-title">Experience</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <span>Oct 2023 - Present</span>
-              <span>Remote · Hong Kong SAR</span>
-            </div>
-            <div class="timeline-body">
-              <h3>Software Testing Engineer · Floship</h3>
-              <ul>
-                <li>Perform full-cycle manual testing for a third-party logistics platform covering shipment processing, warehouse operations, and integrations.</li>
-                <li>Test complex end-to-end business workflows across frontend, backend, and external services.</li>
-                <li>Designed and built a Python + Playwright UI automation framework from scratch to support regression and smoke testing.</li>
-                <li>Developed and maintained automated test cases for critical user flows.</li>
-                <li>Conduct API testing using Postman, validating request/response structures and business logic.</li>
-                <li>Validate data integrity using PostgreSQL and Django ORM for backend verification.</li>
-                <li>Worked closely with developers to reproduce, debug, and verify defects.</li>
-                <li>Contributed to CI/CD test execution using CircleCI.</li>
-              </ul>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-meta">
-              <span>Jan 2023 - Jul 2023</span>
-              <span>Remote · Riga, Latvia</span>
-            </div>
-            <div class="timeline-body">
-              <h3>Software Testing Engineer · Scandiweb</h3>
-              <ul>
-                <li>Performed functional and exploratory manual testing for multiple e-commerce projects built on Magento (PHP backend) with various frontend technologies including Angular, React, and Vue.</li>
-                <li>Worked on projects at both active development and maintenance/support stages.</li>
-                <li>Validated core e-commerce flows such as product browsing, checkout, payments, and user account management.</li>
-                <li>Reported, reproduced, and verified defects.</li>
-                <li>Created and maintained test documentation, including test cases, checklists, and test reports.</li>
-                <li>Collaborated closely with product managers and developers to clarify requirements, discuss edge cases, and improve feature quality.</li>
-                <li>Participated in release testing and regression cycles for production-ready features.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell" id="projects" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <p class="section-kicker" id="projects-title">Selected Work</p>
-        </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status-chip">Python API</span>
-              <span>Swagger · CRUD</span>
-            </div>
-            <h3>Random Person API</h3>
-            <p>
-              A small API project created to practice API design, HTTP methods, Swagger documentation,
-              and checklist-based API validation.
-            </p>
-            <div class="link-row">
-              <a href="https://abominablesnowman.pythonanywhere.com" target="_blank" rel="noreferrer">Swagger</a>
-              <a href="https://github.com/abominablesnowmanxo/random_person_api" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status-chip">Automation</span>
-              <span>Python · Selenium · Pytest</span>
-            </div>
-            <h3>nopCommerce Automation</h3>
-            <p>
-              Basic e-commerce UI automation for the nopCommerce demo store using Python, Selenium,
-              Pytest, and the Page Object Model pattern.
-            </p>
-            <div class="link-row">
-              <a href="https://demo.nopcommerce.com/" target="_blank" rel="noreferrer">Demo site</a>
-              <a href="https://github.com/abominablesnowmanxo/nopcommerce_autotest" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status-chip">Manual QA</span>
-              <span>YouTrack · Checklists</span>
-            </div>
-            <h3>Yandex Practicum QA Artifacts</h3>
-            <p>
-              Bug reports and checklists for educational web, mobile, and API testing projects,
-              documented with practical QA artifacts.
-            </p>
-            <div class="link-row">
-              <a href="https://andreykuznetsovyandex.youtrack.cloud/dashboard?id=2f143011-3168-4ff5-8f74-d03af91706e1" target="_blank" rel="noreferrer">Bug reports</a>
-              <a href="https://docs.google.com/spreadsheets/d/1o66kw6vH8wmCNxyBh1YknXU4L7ir6N5fppnW4QPQRLk/edit?usp=sharing" target="_blank" rel="noreferrer">Checklist</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell credentials" id="certificates" aria-labelledby="certificates-title">
-        <div class="section-heading">
-          <p class="section-kicker" id="certificates-title">Certificates</p>
-        </div>
-        <div class="credential-list">
-          <a href="https://stepik.org/cert/1892421" target="_blank" rel="noreferrer">
-            <span>Stepik</span>
-            Test Automation with Selenium and Python
-          </a>
-          <a href="https://stepik.org/cert/1920183" target="_blank" rel="noreferrer">
-            <span>Stepik</span>
-            Interactive SQL Training
-          </a>
-          <a href="https://drive.google.com/file/d/1XgNiLPuNRFxynrHuLRapg4X7kk7wznR7/view?usp=sharing" target="_blank" rel="noreferrer">
-            <span>Yandex Practicum</span>
-            Software Testing Engineer
-          </a>
-        </div>
-      </section>
-
-      <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="section-kicker" id="contact-title">Contact</p>
-        </div>
-        <div class="contact-actions">
-          <a class="button button-primary" href="mailto:kuznetsov.andrey.qa@gmail.com">Email Andrey</a>
-          <a class="button" href="https://www.linkedin.com/in/andrey-kuznetsov-94998324b/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button" href="https://github.com/abominablesnowmanxo" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button" href="https://t.me/Lester_Young" target="_blank" rel="noreferrer">Telegram</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>© 2026 Andrey Kuznetsov</p>
-      <a href="#top">Back to top</a>
-    </footer>
+    <script>
+      const toggles = document.querySelectorAll("[data-panel-toggle]");
+      const panels = document.querySelectorAll(".info-panel");
+      const homeLink = document.querySelector("[data-home]");
+      let activePanel = null;
+
+      function closePanels() {
+        panels.forEach((panel) => {
+          panel.classList.remove("is-active");
+          panel.setAttribute("aria-hidden", "true");
+        });
+        toggles.forEach((toggle) => toggle.classList.remove("is-active"));
+        activePanel = null;
+      }
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const panelName = toggle.dataset.panelToggle;
+          const panel = document.getElementById(`panel-${panelName}`);
+
+          if (activePanel === panelName) {
+            closePanels();
+            return;
+          }
+
+          closePanels();
+          panel.classList.add("is-active");
+          panel.setAttribute("aria-hidden", "false");
+          toggle.classList.add("is-active");
+          activePanel = panelName;
+        });
+      });
+
+      homeLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        closePanels();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closePanels();
+        }
+      });
+    </script>
   </body>
 </html>
