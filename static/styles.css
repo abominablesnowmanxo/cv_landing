@@ -304,6 +304,20 @@ h1 {
   font-size: 0.82rem;
 }
 
+.role-grid ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.full-experience article {
+  gap: 7px;
+}
+
 .role-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
