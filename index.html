@@ -12,10 +12,6 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Andrey Kuznetsov home" data-home>
-        <span>AK</span>
-        <strong>Andrey Kuznetsov</strong>
-      </a>
       <nav class="site-nav" aria-label="Profile sections">
         <button type="button" data-panel-toggle="about">About</button>
         <button type="button" data-panel-toggle="skills">Skills</button>
@@ -150,7 +146,6 @@
     <script>
       const toggles = document.querySelectorAll("[data-panel-toggle]");
       const panels = document.querySelectorAll(".info-panel");
-      const homeLink = document.querySelector("[data-home]");
       let activePanel = null;
 
       function closePanels() {
@@ -178,11 +173,6 @@
           toggle.classList.add("is-active");
           activePanel = panelName;
         });
-      });
-
-      homeLink.addEventListener("click", (event) => {
-        event.preventDefault();
-        closePanels();
       });
 
       document.addEventListener("keydown", (event) => {
