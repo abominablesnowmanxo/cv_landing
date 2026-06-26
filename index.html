@@ -245,6 +245,24 @@
         });
       });
 
+      document.addEventListener("click", (event) => {
+        if (!activePanel) {
+          return;
+        }
+
+        const target = event.target;
+
+        if (!(target instanceof Element)) {
+          return;
+        }
+
+        const isProtectedClick = target.closest(".panel-card, .site-nav, .panel-arrow, a, button");
+
+        if (!isProtectedClick) {
+          closePanels();
+        }
+      });
+
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
           closePanels();
