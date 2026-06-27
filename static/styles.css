@@ -539,7 +539,7 @@ h1 {
 }
 
 .certificate-detail a {
-  justify-self: start;
+  justify-self: center;
   min-height: 32px;
   padding: 7px 13px;
   border: 1px solid var(--line-strong);

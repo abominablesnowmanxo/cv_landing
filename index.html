@@ -19,7 +19,7 @@
         <button type="button" data-panel-toggle="about">About</button>
         <button type="button" data-panel-toggle="skills">Skills</button>
         <button type="button" data-panel-toggle="experience">Experience</button>
-        <button type="button" data-panel-toggle="certificates">Certificates</button>
+        <button type="button" data-panel-toggle="certificates">Certifications</button>
       </nav>
     </header>
 
@@ -152,9 +152,9 @@
 
       <section class="info-panel" id="panel-certificates" aria-hidden="true" aria-labelledby="panel-certificates-title">
         <div class="panel-card wide">
-          <p class="panel-label" id="panel-certificates-title">Certificates</p>
+          <p class="panel-label" id="panel-certificates-title">Certifications</p>
           <div class="certificate-layout">
-            <div class="certificate-list" role="tablist" aria-label="Certificates">
+            <div class="certificate-list" role="tablist" aria-label="Certifications">
               <button type="button" class="certificate-tab is-active" id="certificate-tab-selenium" role="tab" aria-selected="true" aria-controls="certificate-panel-selenium" data-certificate-toggle="selenium">
                 <strong>Test Automation with Selenium and Python</strong>
                 <span>Stepik · 2022</span>
@@ -238,6 +238,16 @@
           panel.classList.toggle("is-active", isActive);
           panel.hidden = !isActive;
         });
+      }
+
+      function stepTabSelection(tabButtons, datasetKey, activateTab, direction) {
+        const tabs = Array.from(tabButtons);
+        const currentIndex = tabs.findIndex((button) => button.classList.contains("is-active"));
+        const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+        const nextIndex = (safeIndex + direction + tabs.length) % tabs.length;
+        const nextButton = tabs[nextIndex];
+
+        activateTab(nextButton.dataset[datasetKey]);
       }
 
       function openPanel(panelName) {
@@ -337,6 +347,20 @@
 
         if (event.key === "ArrowRight") {
           stepPanel(1);
+        }
+
+        if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+          const direction = event.key === "ArrowDown" ? 1 : -1;
+
+          if (activePanel === "experience") {
+            event.preventDefault();
+            stepTabSelection(jobToggles, "jobToggle", setActiveJob, direction);
+          }
+
+          if (activePanel === "certificates") {
+            event.preventDefault();
+            stepTabSelection(certificateToggles, "certificateToggle", setActiveCertificate, direction);
+          }
         }
       });
     </script>
