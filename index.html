@@ -279,6 +279,7 @@
 
       function stepPanel(direction) {
         if (!activePanel) {
+          openPanel(direction > 0 ? panelOrder[0] : panelOrder[panelOrder.length - 1]);
           return;
         }
 
