@@ -19,7 +19,6 @@
         <button type="button" data-panel-toggle="about">About</button>
         <button type="button" data-panel-toggle="skills">Skills</button>
         <button type="button" data-panel-toggle="experience">Experience</button>
-        <button type="button" data-panel-toggle="work">Work</button>
         <button type="button" data-panel-toggle="certificates">Certificates</button>
       </nav>
     </header>
@@ -105,65 +104,84 @@
       <section class="info-panel" id="panel-experience" aria-hidden="true" aria-labelledby="panel-experience-title">
         <div class="panel-card wide">
           <p class="panel-label" id="panel-experience-title">Experience</p>
-          <div class="role-grid full-experience">
-            <article>
-              <p class="role-meta">Full-time | Oct 2023 - Present · Hong Kong, Hong Kong SAR | Remote</p>
-              <strong>Floship · Software Testing Engineer</strong>
-              <ul>
-                <li>Perform full-cycle manual testing for a third-party logistics platform covering shipment processing, warehouse operations, and integrations.</li>
-                <li>Test complex end-to-end business workflows across frontend, backend, and external services.</li>
-                <li>Designed and built a Python + Playwright UI automation framework from scratch to support regression and smoke testing.</li>
-                <li>Developed and maintained automated test cases for critical user flows.</li>
-                <li>Conduct API testing using Postman, validating request/response structures and business logic.</li>
-                <li>Validate data integrity using PostgreSQL and Django ORM for backend verification.</li>
-                <li>Worked closely with developers to reproduce, debug, and verify defects.</li>
-                <li>Contributed to CI/CD test execution using CircleCI.</li>
-              </ul>
-            </article>
-            <article>
-              <p class="role-meta">Full-time | Jan 2023 - Jul 2023 · Riga, Latvia | Remote</p>
-              <strong>Scandiweb · Software Testing Engineer</strong>
-              <ul>
-                <li>Performed functional and exploratory manual testing for multiple e-commerce projects built on Magento (PHP backend) with various frontend technologies including Angular, React, and Vue.</li>
-                <li>Worked on projects at both active development and maintenance/support stages.</li>
-                <li>Validated core e-commerce flows such as product browsing, checkout, payments, and user account management.</li>
-                <li>Reported, reproduced, and verified defects.</li>
-                <li>Created and maintained test documentation, including test cases, checklists, and test reports.</li>
-                <li>Collaborated closely with product managers and developers to clarify requirements, discuss edge cases, and improve feature quality.</li>
-                <li>Participated in release testing and regression cycles for production-ready features.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="info-panel" id="panel-work" aria-hidden="true" aria-labelledby="panel-work-title">
-        <div class="panel-card wide">
-          <p class="panel-label" id="panel-work-title">Selected Work</p>
-          <div class="work-grid">
-            <a href="https://abominablesnowman.pythonanywhere.com" target="_blank" rel="noreferrer">
-              <strong>Random Person API</strong>
-              <span>Python API with Swagger and CRUD methods.</span>
-            </a>
-            <a href="https://github.com/abominablesnowmanxo/nopcommerce_autotest" target="_blank" rel="noreferrer">
-              <strong>nopCommerce Automation</strong>
-              <span>Python, Selenium, Pytest, Page Object Model.</span>
-            </a>
-            <a href="https://andreykuznetsovyandex.youtrack.cloud/dashboard?id=2f143011-3168-4ff5-8f74-d03af91706e1" target="_blank" rel="noreferrer">
-              <strong>QA Artifacts</strong>
-              <span>Bug reports and checklist-based testing work.</span>
-            </a>
+          <div class="experience-layout">
+            <div class="job-list" role="tablist" aria-label="Experience roles">
+              <button type="button" class="job-tab is-active" id="job-tab-floship" role="tab" aria-selected="true" aria-controls="job-panel-floship" data-job-toggle="floship">
+                <strong>Floship · Full Stack QA</strong>
+                <span>Full-time | Oct 2023 - Present</span>
+                <span>Hong Kong, Hong Kong SAR | Remote</span>
+              </button>
+              <button type="button" class="job-tab" id="job-tab-scandiweb" role="tab" aria-selected="false" aria-controls="job-panel-scandiweb" data-job-toggle="scandiweb">
+                <strong>Scandiweb · Manual QA</strong>
+                <span>Full-time | Jan 2023 - Jul 2023</span>
+                <span>Riga, Latvia | Remote</span>
+              </button>
+            </div>
+            <div class="job-details">
+              <article class="job-detail is-active" id="job-panel-floship" role="tabpanel" aria-labelledby="job-tab-floship" data-job-panel="floship">
+                <strong>Floship · Full Stack QA</strong>
+                <p class="role-meta">Full-time | Oct 2023 - Present · Hong Kong, Hong Kong SAR | Remote</p>
+                <ul>
+                  <li>Perform full-cycle manual testing for a third-party logistics platform covering shipment processing, warehouse operations, and integrations.</li>
+                  <li>Test complex end-to-end business workflows across frontend, backend, and external services.</li>
+                  <li>Designed and built a Python + Playwright UI automation framework from scratch to support regression and smoke testing.</li>
+                  <li>Developed and maintained automated test cases for critical user flows.</li>
+                  <li>Conduct API testing using Postman, validating request/response structures and business logic.</li>
+                  <li>Validate data integrity using PostgreSQL and Django ORM for backend verification.</li>
+                  <li>Worked closely with developers to reproduce, debug, and verify defects.</li>
+                  <li>Contributed to CI/CD test execution using CircleCI.</li>
+                </ul>
+              </article>
+              <article class="job-detail" id="job-panel-scandiweb" role="tabpanel" aria-labelledby="job-tab-scandiweb" data-job-panel="scandiweb" hidden>
+                <strong>Scandiweb · Manual QA</strong>
+                <p class="role-meta">Full-time | Jan 2023 - Jul 2023 · Riga, Latvia | Remote</p>
+                <ul>
+                  <li>Performed functional and exploratory manual testing for multiple e-commerce projects built on Magento (PHP backend) with various frontend technologies including Angular, React, and Vue.</li>
+                  <li>Worked on projects at both active development and maintenance/support stages.</li>
+                  <li>Validated core e-commerce flows such as product browsing, checkout, payments, and user account management.</li>
+                  <li>Reported, reproduced, and verified defects.</li>
+                  <li>Created and maintained test documentation, including test cases, checklists, and test reports.</li>
+                  <li>Collaborated closely with product managers and developers to clarify requirements, discuss edge cases, and improve feature quality.</li>
+                  <li>Participated in release testing and regression cycles for production-ready features.</li>
+                </ul>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="info-panel" id="panel-certificates" aria-hidden="true" aria-labelledby="panel-certificates-title">
-        <div class="panel-card">
+        <div class="panel-card wide">
           <p class="panel-label" id="panel-certificates-title">Certificates</p>
-          <div class="certificate-links">
-            <a href="https://stepik.org/cert/1892421" target="_blank" rel="noreferrer">Test Automation with Selenium and Python</a>
-            <a href="https://stepik.org/cert/1920183" target="_blank" rel="noreferrer">Interactive SQL Training</a>
-            <a href="https://drive.google.com/file/d/1XgNiLPuNRFxynrHuLRapg4X7kk7wznR7/view?usp=sharing" target="_blank" rel="noreferrer">Software Testing Engineer</a>
+          <div class="certificate-layout">
+            <div class="certificate-list" role="tablist" aria-label="Certificates">
+              <button type="button" class="certificate-tab is-active" id="certificate-tab-selenium" role="tab" aria-selected="true" aria-controls="certificate-panel-selenium" data-certificate-toggle="selenium">
+                <strong>Test Automation with Selenium and Python</strong>
+                <span>Stepik · 2022</span>
+              </button>
+              <button type="button" class="certificate-tab" id="certificate-tab-sql" role="tab" aria-selected="false" aria-controls="certificate-panel-sql" data-certificate-toggle="sql">
+                <strong>Interactive SQL Training</strong>
+                <span>Stepik · 2023</span>
+              </button>
+              <button type="button" class="certificate-tab" id="certificate-tab-practicum" role="tab" aria-selected="false" aria-controls="certificate-panel-practicum" data-certificate-toggle="practicum">
+                <strong>Software Testing Engineer</strong>
+                <span>Yandex Practicum</span>
+              </button>
+            </div>
+            <div class="certificate-details">
+              <article class="certificate-detail is-active" id="certificate-panel-selenium" role="tabpanel" aria-labelledby="certificate-tab-selenium" data-certificate-panel="selenium">
+                <img src="static/images/certificates/stepik-selenium-python.png" alt="Stepik certificate for Test automation using Selenium and Python">
+                <a href="https://stepik.org/cert/1892421" target="_blank" rel="noreferrer">Open certificate</a>
+              </article>
+              <article class="certificate-detail" id="certificate-panel-sql" role="tabpanel" aria-labelledby="certificate-tab-sql" data-certificate-panel="sql" hidden>
+                <img src="static/images/certificates/stepik-sql.png" alt="Stepik certificate for Interactive SQL Simulator">
+                <a href="https://stepik.org/cert/1920183" target="_blank" rel="noreferrer">Open certificate</a>
+              </article>
+              <article class="certificate-detail" id="certificate-panel-practicum" role="tabpanel" aria-labelledby="certificate-tab-practicum" data-certificate-panel="practicum" hidden>
+                <img src="static/images/certificates/yandex-practicum-qa.png" alt="Yandex Practicum QA Engineer professional training course certificate">
+                <a href="https://drive.google.com/file/d/1XgNiLPuNRFxynrHuLRapg4X7kk7wznR7/view?usp=sharing" target="_blank" rel="noreferrer">Open certificate</a>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -188,7 +206,39 @@
       const panelNav = document.querySelector(".panel-nav");
       const panelSteps = document.querySelectorAll("[data-panel-step]");
       const panelOrder = Array.from(toggles).map((toggle) => toggle.dataset.panelToggle);
+      const jobToggles = document.querySelectorAll("[data-job-toggle]");
+      const jobPanels = document.querySelectorAll("[data-job-panel]");
+      const certificateToggles = document.querySelectorAll("[data-certificate-toggle]");
+      const certificatePanels = document.querySelectorAll("[data-certificate-panel]");
       let activePanel = null;
+
+      function setActiveJob(jobName) {
+        jobToggles.forEach((toggle) => {
+          const isActive = toggle.dataset.jobToggle === jobName;
+          toggle.classList.toggle("is-active", isActive);
+          toggle.setAttribute("aria-selected", String(isActive));
+        });
+
+        jobPanels.forEach((panel) => {
+          const isActive = panel.dataset.jobPanel === jobName;
+          panel.classList.toggle("is-active", isActive);
+          panel.hidden = !isActive;
+        });
+      }
+
+      function setActiveCertificate(certificateName) {
+        certificateToggles.forEach((toggle) => {
+          const isActive = toggle.dataset.certificateToggle === certificateName;
+          toggle.classList.toggle("is-active", isActive);
+          toggle.setAttribute("aria-selected", String(isActive));
+        });
+
+        certificatePanels.forEach((panel) => {
+          const isActive = panel.dataset.certificatePanel === certificateName;
+          panel.classList.toggle("is-active", isActive);
+          panel.hidden = !isActive;
+        });
+      }
 
       function openPanel(panelName) {
         const panel = document.getElementById(`panel-${panelName}`);
@@ -243,6 +293,18 @@
       panelSteps.forEach((button) => {
         button.addEventListener("click", () => {
           stepPanel(Number(button.dataset.panelStep));
+        });
+      });
+
+      jobToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          setActiveJob(button.dataset.jobToggle);
+        });
+      });
+
+      certificateToggles.forEach((button) => {
+        button.addEventListener("click", () => {
+          setActiveCertificate(button.dataset.certificateToggle);
         });
       });
 
