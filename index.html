@@ -31,7 +31,7 @@
         <p class="speciality">QA Automation Engineer · Software Testing Engineer</p>
 
         <div class="cv-links" aria-label="CV links">
-          <a href="assets/andrey-kuznetsov-cv-2026.pdf" download>Download CV</a>
+          <a href="https://drive.google.com/file/d/1CYnf-zUdb6d-V1bUW36ZezPZBxF6e8Tb/view?usp=sharing" target="_blank" rel="noreferrer">Download CV</a>
         </div>
 
         <div class="social-links" aria-label="Social media and contact links">
@@ -284,7 +284,16 @@
         }
 
         const currentIndex = panelOrder.indexOf(activePanel);
-        const nextIndex = (currentIndex + direction + panelOrder.length) % panelOrder.length;
+
+        if (
+          (direction > 0 && currentIndex === panelOrder.length - 1) ||
+          (direction < 0 && currentIndex === 0)
+        ) {
+          closePanels();
+          return;
+        }
+
+        const nextIndex = currentIndex + direction;
         openPanel(panelOrder[nextIndex]);
       }
 
