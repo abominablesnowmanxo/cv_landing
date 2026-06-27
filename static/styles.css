@@ -323,7 +323,10 @@ h1 {
   padding: clamp(22px, 3.4vmin, 42px);
   border: 1px solid var(--line-strong);
   background: var(--surface);
-  overflow: hidden;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
 }
 
 .panel-card.wide {
@@ -349,6 +352,10 @@ h1 {
   font-family: var(--font-display);
   font-size: 0.68rem;
   line-height: 1.45;
+}
+
+.panel-card .panel-label:focus {
+  outline: none;
 }
 
 .data-grid,
@@ -561,7 +568,7 @@ h1 {
   }
 
   .site-header {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
     width: min(100% - 24px, var(--max));
@@ -569,8 +576,9 @@ h1 {
   }
 
   .site-nav {
-    justify-content: flex-start;
+    justify-content: center;
     gap: 4px;
+    margin-inline: auto;
   }
 
   .site-nav button {
@@ -581,6 +589,10 @@ h1 {
 
   .screen {
     padding: 12px;
+  }
+
+  .panel-nav {
+    display: none;
   }
 
   .portrait {
@@ -600,7 +612,7 @@ h1 {
 
   .panel-card {
     max-height: calc(100svh - 150px);
-    width: 100%;
+    width: calc(100% - 28px);
     padding: 14px;
   }
 }

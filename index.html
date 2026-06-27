@@ -67,7 +67,7 @@
 
       <section class="info-panel" id="panel-about" aria-hidden="true" aria-labelledby="panel-about-title">
         <div class="panel-card">
-          <p class="panel-label" id="panel-about-title">About</p>
+          <p class="panel-label" id="panel-about-title" tabindex="-1" data-panel-focus>About</p>
           <p>
             QA Automation Engineer with solid experience in both manual and automated testing of web
             applications. I am growing in the direction of Python-based automation while remaining
@@ -89,7 +89,7 @@
 
       <section class="info-panel" id="panel-skills" aria-hidden="true" aria-labelledby="panel-skills-title">
         <div class="panel-card compact">
-          <p class="panel-label" id="panel-skills-title">Skills</p>
+          <p class="panel-label" id="panel-skills-title" tabindex="-1" data-panel-focus>Skills</p>
           <div class="data-grid">
             <p><strong>Testing Fundamentals</strong><span>Testing theory, test design techniques, SDLC/STLC, functional testing, checklists, test cases, bug reports.</span></p>
             <p><strong>Web & Mobile Testing</strong><span>Web application testing, mobile testing, client-server architecture, Android Studio, Chrome DevTools, Charles Proxy, BrowserStack.</span></p>
@@ -103,7 +103,7 @@
 
       <section class="info-panel" id="panel-experience" aria-hidden="true" aria-labelledby="panel-experience-title">
         <div class="panel-card wide">
-          <p class="panel-label" id="panel-experience-title">Experience</p>
+          <p class="panel-label" id="panel-experience-title" tabindex="-1" data-panel-focus>Experience</p>
           <div class="experience-layout">
             <div class="job-list" role="tablist" aria-label="Experience roles">
               <button type="button" class="job-tab is-active" id="job-tab-floship" role="tab" aria-selected="true" aria-controls="job-panel-floship" data-job-toggle="floship">
@@ -152,7 +152,7 @@
 
       <section class="info-panel" id="panel-certificates" aria-hidden="true" aria-labelledby="panel-certificates-title">
         <div class="panel-card wide">
-          <p class="panel-label" id="panel-certificates-title">Certifications</p>
+          <p class="panel-label" id="panel-certificates-title" tabindex="-1" data-panel-focus>Certifications</p>
           <div class="certificate-layout">
             <div class="certificate-list" role="tablist" aria-label="Certifications">
               <button type="button" class="certificate-tab is-active" id="certificate-tab-selenium" role="tab" aria-selected="true" aria-controls="certificate-panel-selenium" data-certificate-toggle="selenium">
@@ -211,6 +211,9 @@
       const certificateToggles = document.querySelectorAll("[data-certificate-toggle]");
       const certificatePanels = document.querySelectorAll("[data-certificate-panel]");
       let activePanel = null;
+      let lastPanelTrigger = null;
+      let touchStartX = null;
+      let touchStartY = null;
 
       function setActiveJob(jobName) {
         jobToggles.forEach((toggle) => {
@@ -250,23 +253,42 @@
         activateTab(nextButton.dataset[datasetKey]);
       }
 
-      function openPanel(panelName) {
+      function focusPanel(panel) {
+        const focusTarget = panel.querySelector("[data-panel-focus]");
+
+        if (focusTarget instanceof HTMLElement) {
+          focusTarget.focus({ preventScroll: true });
+        }
+      }
+
+      function openPanel(panelName, trigger = null) {
         const panel = document.getElementById(`panel-${panelName}`);
+        const panelTrigger = trigger instanceof HTMLElement
+          ? trigger
+          : document.querySelector(`[data-panel-toggle="${panelName}"]`);
+
+        if (!panel || !(panelTrigger instanceof HTMLElement)) {
+          return;
+        }
 
         if (document.activeElement instanceof HTMLElement) {
           document.activeElement.blur();
         }
 
-        closePanels();
+        closePanels({ restoreFocus: false });
+        lastPanelTrigger = panelTrigger;
         panel.classList.add("is-active");
         panel.setAttribute("aria-hidden", "false");
-        document.querySelector(`[data-panel-toggle="${panelName}"]`).classList.add("is-active");
+        panelTrigger.classList.add("is-active");
         panelNav.classList.add("is-active");
         panelNav.setAttribute("aria-hidden", "false");
         activePanel = panelName;
+        focusPanel(panel);
       }
 
-      function closePanels() {
+      function closePanels({ restoreFocus = true, clearFocus = false } = {}) {
+        const focusTarget = lastPanelTrigger;
+
         panels.forEach((panel) => {
           panel.classList.remove("is-active");
           panel.setAttribute("aria-hidden", "true");
@@ -275,11 +297,25 @@
         panelNav.classList.remove("is-active");
         panelNav.setAttribute("aria-hidden", "true");
         activePanel = null;
+
+        if (restoreFocus && focusTarget instanceof HTMLElement && document.contains(focusTarget)) {
+          focusTarget.focus({ preventScroll: true });
+        }
+
+        if (restoreFocus) {
+          lastPanelTrigger = null;
+        }
+
+        if (clearFocus && document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+          lastPanelTrigger = null;
+        }
       }
 
       function stepPanel(direction) {
         if (!activePanel) {
-          openPanel(direction > 0 ? panelOrder[0] : panelOrder[panelOrder.length - 1]);
+          const nextPanel = direction > 0 ? panelOrder[0] : panelOrder[panelOrder.length - 1];
+          openPanel(nextPanel);
           return;
         }
 
@@ -289,7 +325,7 @@
           (direction > 0 && currentIndex === panelOrder.length - 1) ||
           (direction < 0 && currentIndex === 0)
         ) {
-          closePanels();
+          closePanels({ restoreFocus: false, clearFocus: true });
           return;
         }
 
@@ -306,7 +342,7 @@
             return;
           }
 
-          openPanel(panelName);
+          openPanel(panelName, toggle);
         });
       });
 
@@ -348,7 +384,7 @@
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-          closePanels();
+          closePanels({ restoreFocus: false, clearFocus: true });
         }
 
         if (event.key === "ArrowLeft") {
@@ -373,6 +409,33 @@
           }
         }
       });
+
+      document.addEventListener("touchstart", (event) => {
+        if (event.touches.length !== 1) {
+          return;
+        }
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+      }, { passive: true });
+
+      document.addEventListener("touchend", (event) => {
+        if (touchStartX === null || touchStartY === null || event.changedTouches.length === 0) {
+          return;
+        }
+
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        touchStartX = null;
+        touchStartY = null;
+
+        if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
+          return;
+        }
+
+        stepPanel(deltaX < 0 ? 1 : -1);
+      }, { passive: true });
     </script>
   </body>
 </html>
